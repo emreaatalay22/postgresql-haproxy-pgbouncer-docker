@@ -1,0 +1,3 @@
+"admin" "admin123"
+"stats" "md525d58b34e8d2ccfbd372cb19f38e2c3c"
+"postgres" "admin123"

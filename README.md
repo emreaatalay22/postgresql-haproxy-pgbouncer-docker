@@ -53,6 +53,9 @@ Prometheus ile HAProxy, PgBouncer ve PostgreSQL metriklerini izleyebilirsiniz.
 https://docs.google.com/spreadsheets/d/16CLkHBl-rKxFxeUA5h_wS2ldBErzCMv2/edit?usp=sharing&ouid=116674202853143301244&rtpof=true&sd=true
 
 
+![HTTP Statistics](https://drive.usercontent.google.com/download?id=1mwaeoNDJ7U9zuWQCKhq-1443ntXsFt7D&export=view&authuser=0)
+
+
 ### Logları Görmek
 ```sh
 docker-compose logs -f

@@ -54,9 +54,17 @@ https://docs.google.com/spreadsheets/d/16CLkHBl-rKxFxeUA5h_wS2ldBErzCMv2/edit?us
 
 
 ![HTTP Statistics](https://drive.usercontent.google.com/download?id=1mwaeoNDJ7U9zuWQCKhq-1443ntXsFt7D&export=view&authuser=0)
+
+
 ![Hikari](https://drive.usercontent.google.com/download?id=1InL8Sj1c2CQcCH0vBOQ4kBnIj2SiWncZ&export=view&authuser=0)
+
+
 ![PG Bouncer](https://drive.usercontent.google.com/download?id=1oElrldeIubpgn3dXiLMfRtXQwhyJSdcm&export=view&authuser=0)
+
+
 ![HA Proxy](https://drive.usercontent.google.com/download?id=1uK0dt6VcEP-bpvB99ATQODbH3B0nsmgY&export=view&authuser=0)
+
+
 ![Postgres](https://drive.usercontent.google.com/download?id=1oyhEwZncf2CN3qldTt2XruAzYTpa-EOM&export=view&authuser=0)
 
 ### Grafana Konfigürasyonu

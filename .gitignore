@@ -1,0 +1,10 @@
+# PostgreSQL verileri
+postgres-master-data/
+postgres-replica1-data/
+postgres-replica2-data/
+
+# JMeter Sonuçları
+jmeter_results/
+
+# Grafana Verileri
+grafana_data/

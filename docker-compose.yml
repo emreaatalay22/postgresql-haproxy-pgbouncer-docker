@@ -8,6 +8,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: mydb
+      PG_MAX_CONNECTIONS: 100
+      PGOPTIONS: "-c tcp_keepalives_idle=600 -c tcp_keepalives_interval=60"
     volumes:
       - ./postgres-master-data:/var/lib/postgresql/data
     ports:
@@ -22,6 +24,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: mydb
+      PG_MAX_CONNECTIONS: 100
+      PGOPTIONS: "-c tcp_keepalives_idle=600 -c tcp_keepalives_interval=60"
     volumes:
       - ./postgres-replica1-data:/var/lib/postgresql/data
     networks:
@@ -34,6 +38,8 @@ services:
       POSTGRES_USER: admin
       POSTGRES_PASSWORD: admin123
       POSTGRES_DB: mydb
+      PG_MAX_CONNECTIONS: 100
+      PGOPTIONS: "-c tcp_keepalives_idle=600 -c tcp_keepalives_interval=60"
     volumes:
       - ./postgres-replica2-data:/var/lib/postgresql/data
     networks:
@@ -73,6 +79,9 @@ services:
     restart: unless-stopped
     environment:
       - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
     ports:
       - "3000:3000"
     networks:
@@ -105,7 +114,86 @@ services:
     restart: unless-stopped
     ports:
       - "9100:9100"
-      
+
+  postgres_exporter:
+    image: wrouesnel/postgres_exporter
+    container_name: postgres_exporter
+    environment:
+      DATA_SOURCE_NAME: "postgresql://admin:admin123@postgres-master:5432/mydb?sslmode=disable"
+    ports:
+      - "9187:9187"
+    networks:
+      - postgres-network 
+
+  pgbouncer_exporter:
+    image: quay.io/prometheuscommunity/pgbouncer-exporter
+    container_name: pgbouncer_exporter
+    environment:
+      PGBOUNCER_URI: "postgres://admin:admin123@pgbouncer:6432/pgbouncer?sslmode=disable"
+      PGBOUNCER_EXPORTER_CONNECTION_STRING: "postgres://admin:admin123@pgbouncer:6432/pgbouncer?sslmode=disable"
+    ports:
+      - "9127:9127"
+    networks:
+      - postgres-network
+    depends_on:
+      - pgbouncer
+
+  haproxy_exporter:
+    image: quay.io/prometheus/haproxy-exporter:v0.15.0
+    container_name: haproxy_exporter
+    command:
+      - "--haproxy.scrape-uri=http://admin:admin@haproxy:1936/stats;csv;csv;norefresh"
+    ports:
+      - "9101:9101"
+    networks:
+      - postgres-network
+    depends_on:
+      - haproxy
+
+  spring-web-api:
+    image: emreatalay22/demo-app:latest  # Docker Hub’daki imajı kullan
+    container_name: spring-web-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ACTIVE_PROFILE=docker
+      - SPRING_PROFILES_ACTIVE=docker
+      - DD_AGENT_HOST=datadog-agent
+      - DD_TRACE_AGENT_PORT=8126
+      - DD_ENV=staging
+      - DD_SERVICE=spring-web-api
+      - DD_VERSION=1.0.0
+      - DD_LOGS_INJECTION=true
+    networks:
+      - postgres-network
+    depends_on:
+      - haproxy
+
+  jmeter:
+    image: justb4/jmeter:5.5
+    container_name: jmeter
+    restart: on-failure
+    depends_on:
+      - spring-web-api
+    volumes:
+      - ./jmeter/tests:/tests
+      - ./jmeter/data:/data
+      - jmeter_results:/results
+    command: 
+      - -Dlog4j2.formatMsgNoLookups=true
+      - -n
+      - -t /tests/test-plan.jmx
+      - -Jusers=2000
+      - -Jrampup=2000
+      - -Jduration=2900
+    networks:
+      - postgres-network
+
+volumes:
+  grafana_data:
+  jmeter_results:
+
 networks:
   postgres-network:
     driver: bridge
+    external: true

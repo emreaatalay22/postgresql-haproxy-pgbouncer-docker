@@ -1,3 +1,6 @@
+"admin" "md5ed348175a97f96082cb9605d89caa099"
+"stats" "md525d58b34e8d2ccfbd372cb19f38e2c3c"
+"postgres" "md532e12f215ba27cb750c9e093ce4b5127"
 "admin" "admin123"
 "stats" "md525d58b34e8d2ccfbd372cb19f38e2c3c"
 "postgres" "admin123"

@@ -1,6 +1,6 @@
 ## README.md
 
-# PostgreSQL HA Yapısı Docker Compose ile Kurulumu
+# PostgreSQL HAProxy PGBouncer Yapısı Docker Compose ile Kurulumu
 
 Bu repo, PostgreSQL'i HAProxy ve PgBouncer kullanarak yüksek erişilebilirlik (High Availability - HA) modunda çalıştırmak için Docker Compose konfigürasyonunu içerir. Ek olarak Prometheus, Grafana ve JMeter entegrasyonlarıyla izleme ve performans testi desteği sağlar.
 

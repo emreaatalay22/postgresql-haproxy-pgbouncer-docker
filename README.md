@@ -70,10 +70,10 @@ https://docs.google.com/spreadsheets/d/16CLkHBl-rKxFxeUA5h_wS2ldBErzCMv2/edit?us
 ### Grafana Konfigürasyonu
 Dashoard template linklerini aşağıdan indirebilirsiniz. 
 
-Java Spring Metrik : https://drive.google.com/file/d/1VG1cvOL_Qwn5uz-3ogDv2vceEd1HNdaB/view?usp=sharing
-HAProxy : https://drive.google.com/file/d/1bH-t562cMtHT9XmjPR-qw3fCNbInTOJj/view?usp=sharing
-PGBouncer : https://drive.google.com/file/d/12vtVhlpVry-uINbNLep4ror2Lb2Gsz1l/view?usp=sharing
-Postgres : https://drive.google.com/file/d/1CsSiOKEupnmm-yYnu8a3hwZ0RoPBBgCD/view?usp=sharing
+- Java Spring Metrik : https://drive.google.com/file/d/1VG1cvOL_Qwn5uz-3ogDv2vceEd1HNdaB/view?usp=sharing
+- HAProxy : https://drive.google.com/file/d/1bH-t562cMtHT9XmjPR-qw3fCNbInTOJj/view?usp=sharing
+- PGBouncer : https://drive.google.com/file/d/12vtVhlpVry-uINbNLep4ror2Lb2Gsz1l/view?usp=sharing
+- Postgres : https://drive.google.com/file/d/1CsSiOKEupnmm-yYnu8a3hwZ0RoPBBgCD/view?usp=sharing
 
 
 ### Logları Görmek

@@ -54,6 +54,18 @@ https://docs.google.com/spreadsheets/d/16CLkHBl-rKxFxeUA5h_wS2ldBErzCMv2/edit?us
 
 
 ![HTTP Statistics](https://drive.usercontent.google.com/download?id=1mwaeoNDJ7U9zuWQCKhq-1443ntXsFt7D&export=view&authuser=0)
+![Hikari](https://drive.usercontent.google.com/download?id=1InL8Sj1c2CQcCH0vBOQ4kBnIj2SiWncZ&export=view&authuser=0)
+![PG Bouncer](https://drive.usercontent.google.com/download?id=1oElrldeIubpgn3dXiLMfRtXQwhyJSdcm&export=view&authuser=0)
+![HA Proxy](https://drive.usercontent.google.com/download?id=1uK0dt6VcEP-bpvB99ATQODbH3B0nsmgY&export=view&authuser=0)
+![Postgres](https://drive.usercontent.google.com/download?id=1oyhEwZncf2CN3qldTt2XruAzYTpa-EOM&export=view&authuser=0)
+
+### Grafana Konfigürasyonu
+Dashoard template linklerini aşağıdan indirebilirsiniz. 
+
+Java Spring Metrik : https://drive.google.com/file/d/1VG1cvOL_Qwn5uz-3ogDv2vceEd1HNdaB/view?usp=sharing
+HAProxy : https://drive.google.com/file/d/1bH-t562cMtHT9XmjPR-qw3fCNbInTOJj/view?usp=sharing
+PGBouncer : https://drive.google.com/file/d/12vtVhlpVry-uINbNLep4ror2Lb2Gsz1l/view?usp=sharing
+Postgres : https://drive.google.com/file/d/1CsSiOKEupnmm-yYnu8a3hwZ0RoPBBgCD/view?usp=sharing
 
 
 ### Logları Görmek
